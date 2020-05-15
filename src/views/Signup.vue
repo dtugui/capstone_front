@@ -49,12 +49,14 @@ export default {
         password: this.password,
         password_confirmation: this.passwordConfirmation,
       };
+      console.log(params);
       axios
-        .post("/api/users", params)
+        .post("/api/organizations", params)
         .then(response => {
           this.$router.push("/login");
         })
         .catch(error => {
+          console.log(error);
           this.errors = error.response.data.errors;
         });
     },
