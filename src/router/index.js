@@ -3,10 +3,12 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import JobsIndex from "../views/JobsIndex.vue";
 import JobsNew from "../views/JobsNew.vue";
-import JobsShow from "../views/JobsNew.vue";
+import JobsShow from "../views/JobsShow.vue";
 import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
+import OrganizationsIndex from "../views/OrganizationsIndex.vue";
+import OrganizationsShow from "../views/OrganizationsShow.vue";
 
 Vue.use(VueRouter);
 
@@ -18,6 +20,8 @@ const routes = [
   { path: "/signup", name: "signup", component: Signup },
   { path: "/login", name: "login", component: Login },
   { path: "/logout", name: "logout", component: Logout },
+  { path: "/organizations", name: "organizations-index", component: OrganizationsIndex },
+  { path: "/organizations/:id", name: "organizations-show", component: OrganizationsShow },
   {
     path: "/about",
     name: "About",

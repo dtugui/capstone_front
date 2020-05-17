@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ job.id}}</h1>
+    <h1>{{ organization.name}}</h1>
     <p>{{ job.description}}</p>
     <a href="/jobs">All jobs</a>
   </div>
@@ -12,13 +12,25 @@ export default {
   data: function() {
     return {
       job: {},
+      jobs: [],
+      organization: {},
     };
   },
   created: function() {
-    axios.get("/api/jobs/" + this.$route.patams.id).then(response => {
-      this.job = response.data;
-    });
+    this.showJob();
+    this.showOrganization();
   },
-  methods: {},
+  methods: {
+    showJob: function() {
+      axios.get("/api/jobs/" + this.$route.params.id).then(response => {
+        this.job = response.data;
+      });
+    },
+    showOrganization: function() {
+      axios.get("/api/organizations/" + this.$route.params.id).then(response => {
+        this.organization = response.data;
+      });
+    },
+  },
 };
 </script>

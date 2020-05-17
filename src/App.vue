@@ -8,6 +8,7 @@
       <router-link to="/signup">Signup</router-link>|
       <router-link to="/login">Login</router-link>|
       <router-link to="/logout">Logout</router-link>
+      <router-link to="/organizations">All organizations</router-link>|
     </div>-->
 
     <!-- Header -->
@@ -23,53 +24,19 @@
       <!-- Nav -->
       <nav id="nav">
         <ul>
-          <li class="current">
+          <li v-if="!jwt" class="current">
             <a href="/">Home</a>
           </li>
           <li>
             <a href="/jobs">Jobs</a>
-            <ul>
-              <li>
-                <a href="#">Lorem dolor</a>
-              </li>
-              <li>
-                <a href="#">Magna phasellus</a>
-              </li>
-              <li>
-                <a href="#">Etiam sed tempus</a>
-              </li>
-              <li>
-                <a href="#">Submenu</a>
-                <ul>
-                  <li>
-                    <a href="#">Lorem dolor</a>
-                  </li>
-                  <li>
-                    <a href="#">Phasellus magna</a>
-                  </li>
-                  <li>
-                    <a href="#">Magna phasellus</a>
-                  </li>
-                  <li>
-                    <a href="#">Etiam nisl</a>
-                  </li>
-                  <li>
-                    <a href="#">Veroeros feugiat</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">Veroeros feugiat</a>
-              </li>
-            </ul>
           </li>
-          <li>
+          <li v-if="!jwt">
             <a href="/signup">Signup</a>
           </li>
-          <li>
+          <li v-if="!jwt">
             <a href="/login">Login</a>
           </li>
-          <li>
+          <li v-if="jwt">
             <a href="/logout">Logout</a>
           </li>
         </ul>
@@ -128,3 +95,21 @@
 
 <style>
 </style>
+
+<script>
+export default {
+  data: function() {
+    return {
+      jwt: null,
+    };
+  },
+  created: function() {
+    this.setJwt();
+  },
+  methods: {
+    setJwt: function() {
+      this.jwt = localStorage.jwt;
+    },
+  },
+};
+</script>

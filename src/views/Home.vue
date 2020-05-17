@@ -10,9 +10,7 @@
 <script>
 export default {
   data: function() {
-    return {
-      message: "Welcome to Vue.js!",
-    };
+    return {};
   },
   created: function() {},
   mounted: function() {
