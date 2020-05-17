@@ -1,16 +1,10 @@
 <template>
   <div class="container">
-    <h1>
-      <strong>All Jobs</strong>
-    </h1>
+    <h1>All Jobs</h1>
     <div v-for="job in jobs">
-      <h2>{{ job.description }}</h2>
-      <div v-for="name in organizations">
-        <p>
-          <strong>{{ name.organization }}</strong>
-          : {{ name }}
-        </p>
-      </div>
+      <a v-bind:href="`/jobs/${job.id}`">
+        <h2>{{ job.description }}</h2>
+      </a>
     </div>
   </div>
 </template>
