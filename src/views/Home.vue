@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <section id="banner"></section>
-    <h1>{{ message }}</h1>
   </div>
 </template>
 
