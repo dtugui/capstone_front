@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <br />
     <h1>All Jobs</h1>
     <section class="wrapper style1">
       <div class="container">

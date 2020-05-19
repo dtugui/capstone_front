@@ -1,20 +1,14 @@
-<template>
-  <div class="organizations-show container">
-    <h2>{{ organization.name }}</h2>
-    <div v-for="job in organization.jobs">
-      <br />
-      {{ job.description }}
-    </div>
-    <router-link to="/organizations"></router-link>
-    <div id="footer">
+<div id="footer">
       <div class="container">
         <div class="row">
+          <section class="col-3 col-6-narrower col-12-mobilep"></section>
+          <section class="col-3 col-6-narrower col-12-mobilep"></section>
           <section class="col-6 col-12-narrower">
-            <h3>Create New Job</h3>
+            <h3>Get In Touch</h3>
             <form>
               <div class="row gtr-50">
                 <div class="col-6 col-12-mobilep">
-                  <input type="text" name="title" id="title" placeholder="Job Title" />
+                  <input type="text" name="name" id="name" placeholder="Name" />
                 </div>
                 <div class="col-6 col-12-mobilep">
                   <input type="email" name="email" id="email" placeholder="Email" />
@@ -46,24 +40,3 @@
         </ul>
       </div>
     </div>
-  </div>
-</template>
-
-<script>
-import axios from "axios";
-
-export default {
-  data: function() {
-    return {
-      organization: {},
-    };
-  },
-  created: function() {
-    axios.get("/api/organizations/profile").then(response => {
-      console.log("organizations show", response);
-      this.organization = response.data;
-    });
-  },
-  methods: {},
-};
-</script>
