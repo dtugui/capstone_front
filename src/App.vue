@@ -62,14 +62,19 @@ export default {
   data: function() {
     return {
       jwt: null,
+      organizationId: null,
     };
   },
   created: function() {
     this.setJwt();
+    this.setOrganizationId();
   },
   methods: {
     setJwt: function() {
       this.jwt = localStorage.jwt;
+    },
+    setOrganizationId: function() {
+      this.organizationId = parseInt(localStorage.organization_id);
     },
   },
 };

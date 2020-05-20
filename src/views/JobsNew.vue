@@ -4,7 +4,7 @@
     <form v-on:submit.prevent="createJob()">
       <ul>
         <li>v-for="error in errors">{{ error }}</li>
-      </ul>Organization ID
+      </ul>
       <input type="text" v-model="NewJob" />
       <div></div>
       <span>Job Description</span>

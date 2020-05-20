@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <h1>{{ job.organization.name}}</h1>
+    <h1>{{ job.organization.name }}</h1>
     <p>{{ job.created_at}}</p>
-    <p>{{ job.title}}</p>
-    <p>{{ job.description}}</p>
+    <p>{{ job.title }}</p>
+    <p>{{ job.description }}</p>
     <p>
       Contact us at
       <ins>{{job.organization.email}}</ins>
